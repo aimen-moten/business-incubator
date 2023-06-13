@@ -1,11 +1,12 @@
 import React from 'react';
 import { FaHome, FaUserCircle, FaCreativeCommons, FaFeatherAlt, FaConnectdevelop, FaBook, FaSignOutAlt } from 'react-icons/fa';
+import logo from '../assets/logo.png';
 
 const Navbar = (props) => {
   return (
     <header className="bg-gray-900 py-4 shadow">
       <nav className="container mx-auto px-4 flex items-center justify-between">
-        <a href="/" className="text-2xl font-bold text-white">Infinity Business Incubator</a>
+        <a href="/" className="text-2xl font-bold text-white"><div><img src={logo} alt='logo.png' width={70}/>Infinity Business Incubator</div></a>
         <ul className="flex space-x-4">
           <li>
             <a href="/" className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
