@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaHome, FaUserCircle, FaCreativeCommons, FaFeatherAlt, FaConnectdevelop, FaBook } from 'react-icons/fa';
+import { FaHome, FaUserCircle, FaCreativeCommons, FaFeatherAlt, FaConnectdevelop, FaBook, FaSignOutAlt } from 'react-icons/fa';
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <header className="bg-gray-900 py-4 shadow">
       <nav className="container mx-auto px-4 flex items-center justify-between">
@@ -33,9 +33,19 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href='/' className='text-white'>
+          <div>
+            <a href='/login' className='text-white'>
               <FaUserCircle className="nav-icon mr-1" size={40}/>
             </a>
+          </div>
+          <li>
+            <a href='/logout' className='text-white'>
+              <FaSignOutAlt className="nav-icon mr-1" size={40}/>
+            </a>
+          </li>
+            {
+              props.name ? `Welcome - ${props.name}` : "Login Pls."
+            }
           </li>
         </ul>
       </nav>
