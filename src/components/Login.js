@@ -16,9 +16,12 @@ const Login = () => {
     console.log('Password:', password);
   };
   try{
-    const userCredential await signInWithEmailAndPassword(auth,email, password);
-  };
-  
+    // const userCredential = await signInWithEmailAndPassword(auth,email, password);
+
+  }catch{
+    setError(error.message);
+  }
+
   return (
     <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-md shadow-lg">

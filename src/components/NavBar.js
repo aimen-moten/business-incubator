@@ -39,15 +39,9 @@ const Navbar = (props) => {
               <FaUserCircle className="nav-icon mr-1" size={40}/>
             </a>
           </div>
-          // {/* <li>
-          //   <a href='/logout' className='text-white'>
-          //     <FaSignOutAlt className="nav-icon mr-1" size={40}/>
-          //   </a>
-          // </li> */}
             {
               props.name ? `Welcome - ${props.name}` : "Login"
             }
-          </a>
           </li>
 
         </ul>
