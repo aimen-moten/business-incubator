@@ -9,10 +9,12 @@ import IdeaEvaluation from "./components/IdeaEvaluation";
 import ProgramOverview from "./components/ProgramOverview";
 import Resources from "./components/Resources";
 import Profile from "./components/Profile";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div>
+    <NavBar/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage/>} exact/>
