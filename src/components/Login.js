@@ -3,39 +3,58 @@ import { Link } from 'react-router-dom';
 import Eagle from '../assets/eagle.gif';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './Firebase';
+import Confetti from 'react-confetti';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login form submitted');
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
-  try{
-    // const userCredential = await signInWithEmailAndPassword(auth,email, password);
+    setError('');
 
-  }catch{
-    setError(error.message);
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log('Login successful: ', user);
+      setLoggedIn(true);
+    } catch (error) {
+      setError(error.message);
+      alert('Error: ' + error.message);
+    }
+  };
+
+  if (loggedIn) {
+    return (
+      <div className="text-center">
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          recycle={false}
+          numberOfPieces={400}
+          gravity={0.5}
+        />
+        <div className="text-center">
+              <h4 className="text-2xl font-bold mb-4">Logged in Successfully!</h4>
+              <Link to="/" className="text-blue-500 hover:underline">
+                Go to homepage
+              </Link>
+            </div>
+      </div>
+    );
   }
 
   return (
     <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-md shadow-lg">
         <div className="text-center w-[400px]">
-          <img
-            src={Eagle}
-            alt="Avatar"
-            className="h-[130px] mx-auto mb-4 rounded-full"
-          />
-          <div className='mb-5'>Hey sup...nice to see you again</div>
+          <img src={Eagle} alt="Avatar" className="h-[130px] mx-auto mb-4 rounded-full" />
+          <div className="mb-5">Hey sup...nice to see you again</div>
           <h2 className="text-2xl font-bold mb-4">Log In</h2>
         </div>
         <form onSubmit={handleSubmit}>
-
           <div className="mb-4">
             <label htmlFor="email" className="block font-medium mb-1">
               Email
