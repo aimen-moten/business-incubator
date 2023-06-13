@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "title": "How to raise funding for a startup?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan elit in malesuada iaculis.",
+      "author": {
+        "name": "John Doe",
+        "avatar": "https://xsgames.co/randomusers/avatar.php?g=male"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Marketing strategies for a new business",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan elit in malesuada iaculis.",
+      "author": {
+        "name": "Jane Smith",
+        "avatar": "https://xsgames.co/randomusers/avatar.php?g=pixel"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Tips for effective team management",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan elit in malesuada iaculis.",
+      "author": {
+        "name": "Mike Johnson",
+        "avatar": "https://xsgames.co/randomusers/avatar.php?g=female"
+      }
+    }
+  ]
+  

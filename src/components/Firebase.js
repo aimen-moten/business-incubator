@@ -16,5 +16,5 @@ const auth = getAuth();
 const database = getDatabase();
 
 
-export{app, auth, database};
+export{app, auth, database, ref, set};
 

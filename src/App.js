@@ -12,10 +12,14 @@ import Profile from "./components/Profile";
 import NavBar from "./components/NavBar";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import ApplicationProcess from "./components/ApplicationProcess";
+import { AuthProvider } from "./AuthContext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div>
+    <AuthProvider>
     <NavBar/>
       <BrowserRouter>
         <Routes>
@@ -23,6 +27,7 @@ function App() {
           <Route path="/signup" element={<Signup/>} exact/>
           <Route path="/login" element={<Login/>} exact/>
           <Route path="/aboutUs" element={<AboutUs/>} exact/>
+          <Route path="/application" element={<ApplicationProcess/>} exact/>
           <Route path="/contactUs" element={<ContactUs/>} exact/>
           <Route path="/mentorship" element={<Mentorship/>} exact/>
           <Route path="/collaborativeWorkspace" element={<CollaborativeWorkspace/>} exact/>
@@ -32,6 +37,8 @@ function App() {
           <Route path='/profile' element={<Profile/>} exact/>
         </Routes>
       </BrowserRouter>
+      </AuthProvider>
+      <Footer/>
     </div>
   );
 }

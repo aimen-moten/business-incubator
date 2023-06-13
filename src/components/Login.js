@@ -47,7 +47,7 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center">
+    <div className="bg-gradient-to-r from-purple-400 via-blue-500 to-red-500 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-md shadow-lg">
         <div className="text-center w-[400px]">
           <img src={Eagle} alt="Avatar" className="h-[130px] mx-auto mb-4 rounded-full" />

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaHome, FaUserCircle, FaCreativeCommons, FaFeatherAlt, FaConnectdevelop, FaBook, FaSignOutAlt } from 'react-icons/fa';
 import logo from '../assets/logo.png';
+import { AuthContext } from '../AuthContext';
+import { Link } from 'react-router-dom';
 
-const Navbar = (props) => {
-  const isLoggedIn = props.isLoggedIn;
-
+const Navbar = () => {
+  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
   const handleLogout = () => {
-    // Implement your logout logic here
+    setIsLoggedIn(false);
   };
 
   return (
@@ -59,25 +60,24 @@ const Navbar = (props) => {
             </a>
           </li>
           <li className="text-white">
-            {isLoggedIn ? (
-              <>
-                <div>
-                  <FaUserCircle className="nav-icon mr-1" size={40} />
-                </div>
-                <span>Welcome, {props.userName}</span>
-                <button
+            {
+              isLoggedIn ? (
+                <Link
+                  to="/"
+                  className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
                   onClick={handleLogout}
-                  className="text-white hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110 ml-2"
                 >
-                  <FaSignOutAlt className="nav-icon" size={30} />
-                </button>
-              </>
-            ) : (
-              <a href="/login" className="text-white">
-                <FaUserCircle className="nav-icon mr-1" size={40} />
-                Login
-              </a>
-            )}
+                  <FaSignOutAlt className="nav-icon mr-1" size={30} />Logout
+                </Link>
+              ) : (
+                <a
+                  href="/login"
+                  className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
+                >
+                  <FaUserCircle className="nav-icon mr-1" size={30} />
+                </a>
+              )
+            }
           </li>
         </ul>
       </nav>

@@ -26,9 +26,8 @@ export default function AboutUs() {
             It's time to transcend limits and unlock the infinite possibilities of your business. Join Infinity Business Incubator today and elevate your entrepreneurial potential with unparalleled mentorship, exclusive resources, signature programs, and a world of possibilities. Get ready to ignite your entrepreneurial journey like never before.
           </h4>
 
-          <img src={biHero} className='' ></img>
+          <img src={biHero} className='' alt='imagehero'></img>
       </div>
-      <Footer/>
     </div>
   )
 }
