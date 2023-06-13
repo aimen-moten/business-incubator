@@ -33,19 +33,19 @@ const Navbar = (props) => {
               <FaConnectdevelop className="nav-icon mr-1" size={40}/>Connect
             </a>
           </li>
-          <li>
+          <li className='text-white'>
           <div>
             <a href='/login' className='text-white'>
               <FaUserCircle className="nav-icon mr-1" size={40}/>
             </a>
           </div>
-          <li>
+          {/* <li>
             <a href='/logout' className='text-white'>
               <FaSignOutAlt className="nav-icon mr-1" size={40}/>
             </a>
-          </li>
+          </li> */}
             {
-              props.name ? `Welcome - ${props.name}` : "Login Pls."
+              props.name ? `Welcome - ${props.name}` : "Login"
             }
           </li>
         </ul>

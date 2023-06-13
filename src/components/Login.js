@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Eagle from '../assets/eagle.gif';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './Firebase';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log('Login form submitted');
     console.log('Email:', email);
     console.log('Password:', password);
   };
-
+  try{
+    const userCredential await signInWithEmailAndPassword(auth,email, password);
+  };
+  
   return (
     <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-md shadow-lg">
