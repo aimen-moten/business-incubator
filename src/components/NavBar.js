@@ -10,44 +10,37 @@ const Navbar = (props) => {
         <ul className="flex space-x-4">
           <li>
             <a href="/" className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
-              <FaHome className="nav-icon mr-1" size={40}/> Home
+              <FaHome className="nav-icon mr-1" size={30}/> Home
             </a>
           </li>
           <li>
-            <a href="/" className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
-              <FaFeatherAlt className="nav-icon mr-1" size={40}/> Programs
+            <a href="/programOverview" className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
+              <FaFeatherAlt className="nav-icon mr-1" size={30}/> Programs
             </a>
           </li>
           <li>
-            <a href="/" className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
-              <FaCreativeCommons className="nav-icon mr-1" size={40}/>Templates
+            <a href="/" className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
+              <FaCreativeCommons className="nav-icon mr-1" size={30}/>Templates
             </a>
           </li>
           <li>
-            <a href="/" className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
-              <FaBook className="nav-icon mr-1" size={40}/>Resources
+            <a href="/resources" className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
+              <FaBook className="nav-icon mr-1" size={30}/>Resources
             </a>
           </li>
           <li>
-            <a href="/" className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
-              <FaConnectdevelop className="nav-icon mr-1" size={40}/>Connect
+            <a href="/" className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110">
+              <FaConnectdevelop className="nav-icon mr-1" size={30}/>Connect
             </a>
           </li>
           <li>
-          <div>
-            <a href='/login' className='text-white'>
-              <FaUserCircle className="nav-icon mr-1" size={40}/>
-            </a>
-          </div>
-          <li>
-            <a href='/logout' className='text-white'>
-              <FaSignOutAlt className="nav-icon mr-1" size={40}/>
-            </a>
-          </li>
+          <a href={props.name ? '/logout' : '/login' } className='text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110'>
             {
-              props.name ? `Welcome - ${props.name}` : "Login Pls."
+              props.name ? <FaSignOutAlt className="nav-icon mr-1" size={30}/> : <FaUserCircle className="nav-icon mr-1" size={30}/>
             }
+          </a>
           </li>
+          
         </ul>
       </nav>
     </header>
