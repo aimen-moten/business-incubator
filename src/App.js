@@ -10,6 +10,8 @@ import ProgramOverview from "./components/ProgramOverview";
 import Resources from "./components/Resources";
 import Profile from "./components/Profile";
 import NavBar from "./components/NavBar";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage/>} exact/>
+          <Route path="/signup" element={<Signup/>} exact/>
+          <Route path="/login" element={<Login/>} exact/>
           <Route path="/aboutUs" element={<AboutUs/>} exact/>
           <Route path="/contactUs" element={<ContactUs/>} exact/>
           <Route path="/mentorship" element={<Mentorship/>} exact/>
