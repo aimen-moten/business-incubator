@@ -78,9 +78,7 @@ export default function ContactUs() {
         </form>
       </div>
     </div>
-    <div className='bg-white'>
-    <Footer/>
-    </div>
+    
     </div>
   )
 }

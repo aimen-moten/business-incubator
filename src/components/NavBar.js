@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { FaHome, FaUserCircle, FaCreativeCommons, FaFeatherAlt, FaConnectdevelop, FaBook, FaSignOutAlt } from 'react-icons/fa';
+import { FaHome, FaUserCircle, FaFileAlt, FaLightbulb, FaUsers, FaBook, FaSignOutAlt, FaEnvelope } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import { AuthContext } from '../AuthContext';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
@@ -24,7 +24,7 @@ const Navbar = () => {
               href="/"
               className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
             >
-              <FaHome className="nav-icon mr-1" size={30} /> Home
+              <FaHome className="nav-icon mr-1" size={30} />Home
             </a>
           </li>
           <li>
@@ -32,15 +32,15 @@ const Navbar = () => {
               href="/programOverview"
               className="text-lg text-white flex items-center hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
             >
-              <FaFeatherAlt className="nav-icon mr-1" size={30} /> Programs
+              <FaLightbulb className="nav-icon mr-1" size={30} />Programs
             </a>
           </li>
           <li>
             <a
-              href="/"
+              href="/templates"
               className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
             >
-              <FaCreativeCommons className="nav-icon mr-1" size={30} />Templates
+              <FaFileAlt className="nav-icon mr-1" size={30} />Templates
             </a>
           </li>
           <li>
@@ -53,31 +53,61 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="/collaborativeWorkspace"
               className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
             >
-              <FaConnectdevelop className="nav-icon mr-1" size={30} />Connect
+              <FaUsers className="nav-icon mr-1" size={30} />Workspace
+            </a>
+          </li>
+          <li>
+            <a
+              href="/contactUs"
+              className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
+            >
+              <FaEnvelope className="nav-icon mr-1" size={30} />Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="/ideaEvaluationTool"
+              className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
+            >
+              <FaLightbulb className="nav-icon mr-1" size={30} />Tool
+            </a>
+          </li>
+          <li>
+            <a
+              href="/mentorship"
+              className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
+            >
+              <FaUsers className="nav-icon mr-1" size={30} />Mentorship
+            </a>
+          </li>
+          <li>
+            <a
+              href="/profile"
+              className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
+            >
+              <FaUsers className="nav-icon mr-1" size={30} />
             </a>
           </li>
           <li className="text-white">
-            {
-              isLoggedIn ? (
-                <Link
-                  to="/"
-                  className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
-                  onClick={handleLogout}
-                >
-                  <FaSignOutAlt className="nav-icon mr-1" size={30} />Logout
-                </Link>
-              ) : (
-                <a
-                  href="/login"
-                  className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
-                >
-                  <FaUserCircle className="nav-icon mr-1" size={30} />
-                </a>
-              )
-            }
+            {isLoggedIn ? (
+              <a
+                href="/"
+                className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
+                onClick={handleLogout}
+              >
+                <FaSignOutAlt className="nav-icon mr-1" size={30} /> Logout
+              </a>
+            ) : (
+              <a
+                href="/login"
+                className="text-lg text-white flex items-right hover:text-orange-300 transition duration-300 ease-in-out transform hover:scale-110"
+              >
+                <FaUserCircle className="nav-icon mr-1" size={30} /> Login
+              </a>
+            )}
           </li>
         </ul>
       </nav>

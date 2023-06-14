@@ -140,12 +140,10 @@ const Homepage = () => {
                 <p className="text-gray-700">Discover helpful tools and software for startups</p>
               </Link>
             </div>
-          
           </div>
         </div>
       </section>
 
-      <Footer/>      
     </div>
   );
 }
