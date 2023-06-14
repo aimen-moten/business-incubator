@@ -11,4 +11,6 @@
     <li>React JS</li>
     <li>Tailwind CSS</li>
   </ul>
+  <h2><a href='https://infinitybusinessincubator.netlify.app'>https://infinitybusinessincubator.netlify.app</a></h2>
+  <h2><a href='https://youtu.be/ZgSWTHq8AYs'>Youtube Link</a></h2>
 </div>
