@@ -7,7 +7,7 @@
     <li>VS Code</li>
     <li>Git</li>
     <li>Github</li>
-    <li>Firebas</li>
+    <li>Firebase</li>
     <li>React JS</li>
     <li>Tailwind CSS</li>
   </ul>
