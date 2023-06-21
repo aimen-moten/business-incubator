@@ -21,8 +21,8 @@ function App() {
   return (
     <div>
       <AuthProvider>
-        <NavBar />
         <BrowserRouter>
+          <NavBar />
           <Routes>
             <Route path="/" element={<Homepage />} exact />
             <Route path="/signup" element={<Signup />} exact />
